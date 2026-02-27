@@ -1,0 +1,84 @@
+.edit-container{
+  min-height: calc(100vh - 90px);
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:40px 20px;
+  background:#f4f6f9;
+}
+
+.edit-card{
+  width:100%;
+  max-width:520px;
+  background:white;
+  border-radius:14px;
+  padding:25px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.edit-card h2{
+  margin:0;
+  font-size:26px;
+  font-weight:800;
+}
+
+.sub{
+  margin-top:6px;
+  color:#6b7280;
+  margin-bottom:18px;
+}
+
+.grupo{
+  margin-bottom:14px;
+}
+
+label{
+  display:block;
+  font-weight:700;
+  margin-bottom:6px;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #d1d5db;
+}
+
+input:focus{
+  outline:none;
+  border-color:#2563eb;
+  box-shadow:0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.botones{
+  display:flex;
+  gap:10px;
+  justify-content:flex-end;
+  margin-top:18px;
+}
+
+.btn-cancelar{
+  background:#e5e7eb;
+  border:none;
+  padding:10px 16px;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.btn-guardar{
+  background:#2563eb;
+  color:white;
+  border:none;
+  padding:10px 16px;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+}
+.error{
+  color:#e53935;
+  font-size:12px;
+  margin-top:4px;
+  display:block;
+}

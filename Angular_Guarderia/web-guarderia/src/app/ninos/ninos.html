@@ -1,0 +1,65 @@
+<div class="container-ninos">
+
+  <div class="header">
+    <div>
+      <h1>Lista de Niños</h1>
+      <p>Gestión de registros de niños (CRUD)</p>
+    </div>
+
+    <a routerLink="/ninos/nuevo" class="btn-nuevo">
+      + Nuevo Niño
+    </a>
+  </div>
+
+  <div class="buscador">
+    <input
+    type="text"
+    placeholder="Buscar por nombre, apellido o alergias..."
+    [(ngModel)]="textoBusqueda"
+    (input)="filtrar()"
+  />
+         <button class="btn-recargar" (click)="limpiarBusqueda()">
+          Limpiar
+          </button>
+    </div>
+
+  <div class="tabla-container">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Fecha</th>
+          <th>Alergias</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let n of lista; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ n.nombre }}</td>
+          <td>{{ n.apellido }}</td>
+          <td>{{ n.fecha_nacimiento | date:'yyyy-MM-dd' }}</td>
+          <td><span class="badge">{{ n.alergias }}</span></td>
+
+          <td class="acciones">
+            <button class="btn-editar" [routerLink]="['/ninos/editar', n.nino_id]">
+              Editar
+            </button>
+
+            <button class="btn-eliminar" (click)="eliminar(n.nino_id)">
+              Eliminar
+            </button>
+          </td>
+        </tr>
+
+        <tr *ngIf="lista.length === 0">
+          <td colspan="6" class="sin-registros">No hay registros.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

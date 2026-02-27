@@ -1,0 +1,74 @@
+<div class="container-asignaciones">
+
+  <div class="header">
+    <div>
+      <h1>Lista de Asignaciones</h1>
+      <p>Gestión de asignaciones Niño ↔ Cuidador</p>
+    </div>
+
+    <a routerLink="/asignaciones/nuevo" class="btn-nuevo">
+      + Nueva Asignación
+    </a>
+  </div>
+
+  <div class="buscador">
+    <input
+      type="text"
+      placeholder="Buscar por niño, cuidador o estado..."
+      [(ngModel)]="termino"
+      (input)="filtrar()"
+    />
+
+    <button class="btn-recargar" (click)="limpiar()">Limpiar</button>
+  </div>
+
+  <div class="tabla-container">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Niño</th>
+          <th>Cuidador</th>
+          <th>Fecha</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let a of lista; let i = index">
+          <td>{{ i + 1 }}</td>
+
+          <td>
+            {{ a?.nino?.nombre }} {{ a?.nino?.apellido }}
+          </td>
+
+          <td>
+            {{ a?.cuidador?.nombre }}
+          </td>
+
+          <td>{{ a?.fecha_asignacion | date:'yyyy-MM-dd' }}</td>
+
+          <td>
+            <span class="badge">{{ a?.estado }}</span>
+          </td>
+
+          <td class="acciones">
+            <button class="btn-editar" [routerLink]="['/asignaciones/editar', a.asignacion_id]">
+              Editar
+            </button>
+
+            <button class="btn-eliminar" (click)="eliminar(a.asignacion_id)">
+              Eliminar
+            </button>
+          </td>
+        </tr>
+
+        <tr *ngIf="lista.length === 0">
+          <td colspan="6" class="sin-registros">No hay registros.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

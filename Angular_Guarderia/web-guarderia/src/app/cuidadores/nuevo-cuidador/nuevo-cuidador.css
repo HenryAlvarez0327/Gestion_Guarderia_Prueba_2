@@ -1,0 +1,81 @@
+.edit-container{
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 18px;
+  display:flex;
+  justify-content:center;
+}
+
+.edit-card{
+  width: 540px;
+  background:#fff;
+  border-radius: 14px;
+  padding: 22px;
+  border:1px solid #e6eefc;
+  box-shadow:0 14px 30px rgba(0,0,0,.08);
+}
+
+.edit-card h2{
+  margin:0;
+  font-size:28px;
+}
+
+.sub{
+  margin:6px 0 18px 0;
+  color:#5d6b86;
+}
+
+.grupo{
+  margin-bottom: 14px;
+}
+
+.grupo label{
+  display:block;
+  font-weight:700;
+  margin-bottom: 6px;
+}
+
+.grupo input{
+  width:100%;
+  padding: 12px 12px;
+  border-radius:10px;
+  border:1px solid #ccd8f3;
+  outline:none;
+}
+
+.botones{
+  display:flex;
+  justify-content:flex-end;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.btn-cancelar{
+  background:#e9edf5;
+  border:none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor:pointer;
+  font-weight:800;
+}
+
+.btn-guardar{
+  background:#2b5cff;
+  color:#fff;
+  border:none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor:pointer;
+  font-weight:900;
+}
+.error{
+  color:#e53935;
+  font-size:12px;
+  margin-top:4px;
+  display:block;
+}
+
+.req{
+  color:#e53935;
+  font-weight:bold;
+}

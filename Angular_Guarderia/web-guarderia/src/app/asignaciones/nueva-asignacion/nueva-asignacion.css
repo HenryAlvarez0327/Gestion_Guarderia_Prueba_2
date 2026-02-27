@@ -1,0 +1,70 @@
+.edit-container{
+  min-height: 70vh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding: 30px 18px;
+}
+
+.edit-card{
+  width: 560px;
+  background:#fff;
+  border:1px solid #e6edf8;
+  border-radius: 16px;
+  padding: 22px 22px;
+  box-shadow: 0 12px 24px rgba(0,0,0,.08);
+}
+
+.edit-card h2{
+  margin:0;
+  font-size: 30px;
+}
+
+.sub{
+  margin: 6px 0 18px;
+  opacity: .75;
+}
+
+.grupo{
+  margin-bottom: 14px;
+}
+
+label{
+  display:block;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+input, select{
+  width:100%;
+  padding: 12px 12px;
+  border:1px solid #cfd8ea;
+  border-radius: 10px;
+  outline:none;
+}
+
+.botones{
+  display:flex;
+  justify-content:flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-cancelar{
+  background:#e9edf5;
+  border:0;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 800;
+  cursor:pointer;
+}
+
+.btn-guardar{
+  background:#2b5cff;
+  border:0;
+  color:#fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 800;
+  cursor:pointer;
+}

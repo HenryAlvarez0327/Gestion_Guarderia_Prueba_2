@@ -1,0 +1,74 @@
+<div class="edit-container">
+
+  <div class="edit-card">
+    <h2>{{ esEdicion ? 'Editar Niño' : 'Nuevo Niño' }}</h2>
+    <p class="sub">
+      {{ esEdicion ? 'Actualiza los datos del niño' : 'Registra un nuevo niño' }}
+    </p>
+
+    <form (ngSubmit)="guardar()">
+
+      
+      <div class="grupo">
+        <label>Nombre</label>
+        <input
+          type="text"
+          [(ngModel)]="nino.nombre"
+          name="nombre"
+          required
+          (keypress)="soloLetras($event)"
+          pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$"
+          #nombre="ngModel">
+
+        <small class="error" *ngIf="nombre.invalid && nombre.touched">
+          Solo letras permitidas
+        </small>
+      </div>
+
+      
+      <div class="grupo">
+        <label>Apellido</label>
+        <input
+          type="text"
+          [(ngModel)]="nino.apellido"
+          name="apellido"
+          required
+          (keypress)="soloLetras($event)"
+          pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$"
+          #apellido="ngModel">
+
+        <small class="error" *ngIf="apellido.invalid && apellido.touched">
+          Solo letras permitidas
+        </small>
+      </div>
+
+      
+      <div class="grupo">
+        <label>Fecha de Nacimiento</label>
+        <input type="date"
+               [(ngModel)]="nino.fecha_nacimiento"
+               name="fecha_nacimiento"
+               required>
+      </div>
+
+      <div class="grupo">
+        <label>Alergias</label>
+        <input type="text"
+               [(ngModel)]="nino.alergias"
+               name="alergias">
+      </div>
+
+     
+      <div class="botones">
+        <button type="button" class="btn-cancelar" (click)="cancelar()">
+          Cancelar
+        </button>
+
+        <button type="submit" class="btn-guardar">
+          {{ esEdicion ? 'Actualizar' : 'Guardar' }}
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

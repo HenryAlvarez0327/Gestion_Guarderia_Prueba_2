@@ -1,0 +1,136 @@
+.container-asignaciones{
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 18px;
+}
+
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: 22px 22px;
+  border-radius: 14px;
+  background: #f4f7ff;
+  border: 1px solid #d8e3ff;
+  margin-bottom: 18px;
+}
+
+.header h1{
+  margin:0;
+  font-size: 44px;
+  line-height: 1.1;
+}
+
+.header p{
+  margin: 8px 0 0;
+  opacity: .8;
+}
+
+.btn-nuevo{
+  background:#2b5cff;
+  color:#fff;
+  padding:12px 18px;
+  border-radius: 12px;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow: 0 8px 18px rgba(43,92,255,.25);
+}
+
+.buscador{
+  display:flex;
+  gap: 10px;
+  align-items:center;
+  background:#fff;
+  border: 1px solid #dfe6f5;
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 14px;
+}
+
+.buscador input{
+  flex:1;
+  border: 1px solid #cfd8ea;
+  border-radius: 10px;
+  padding: 12px 14px;
+  outline: none;
+}
+
+.btn-recargar{
+  background:#e9edf5;
+  border: 0;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor:pointer;
+}
+
+.tabla-container{
+  background:#fff;
+  border:1px solid #dfe6f5;
+  border-radius: 14px;
+  overflow:hidden;
+  box-shadow: 0 10px 22px rgba(0,0,0,.06);
+}
+
+table{
+  width:100%;
+  border-collapse: collapse;
+}
+
+thead{
+  background:#0b1726;
+  color:#fff;
+}
+
+th, td{
+  padding: 14px 14px;
+  text-align:left;
+  border-bottom: 1px solid #edf1fb;
+}
+
+.badge{
+  background:#d6ffe9;
+  border:1px solid #56d691;
+  color:#125f34;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 800;
+  display:inline-block;
+}
+
+.badge-inactivo{
+  background:#ffe3e3;
+  border-color:#ff6b6b;
+  color:#7a0d0d;
+}
+
+.acciones{
+  display:flex;
+  gap: 10px;
+}
+
+.btn-editar{
+  background:#f5a000;
+  border:0;
+  color:#1b1b1b;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 800;
+  cursor:pointer;
+}
+
+.btn-eliminar{
+  background:#ef4444;
+  border:0;
+  color:#fff;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 800;
+  cursor:pointer;
+}
+
+.sin-registros{
+  text-align:center;
+  padding: 18px;
+  opacity:.7;
+}

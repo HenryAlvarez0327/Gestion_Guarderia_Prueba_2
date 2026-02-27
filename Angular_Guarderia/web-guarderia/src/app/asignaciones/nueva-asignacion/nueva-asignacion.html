@@ -1,0 +1,93 @@
+<div class="edit-container">
+  <div class="edit-card">
+
+    <h2>{{ esEdicion ? 'Editar Asignación' : 'Nueva Asignación' }}</h2>
+    <p class="sub">
+      {{ esEdicion ? 'Actualiza la asignación' : 'Asigna un niño a un cuidador' }}
+    </p>
+
+    <form (ngSubmit)="guardar()" #form="ngForm">
+
+    
+      <div class="grupo">
+        <label>Niño <span class="req">*</span></label>
+
+        <select
+          [(ngModel)]="asignacion.nino_id"
+          name="nino_id"
+          required
+          #nino_id="ngModel"
+        >
+          <option [ngValue]="0">-- Selecciona un niño --</option>
+          <option *ngFor="let n of ninos" [ngValue]="n.nino_id">
+            {{ n.nombre }} {{ n.apellido }}
+          </option>
+        </select>
+
+        <small class="error" *ngIf="(nino_id.invalid || asignacion.nino_id==0) && nino_id.touched">
+          Selecciona un niño.
+        </small>
+      </div>
+
+     
+      <div class="grupo">
+        <label>Cuidador <span class="req">*</span></label>
+
+        <select
+          [(ngModel)]="asignacion.cuidador_id"
+          name="cuidador_id"
+          required
+          #cuidador_id="ngModel"
+        >
+          <option [ngValue]="0">-- Selecciona un cuidador --</option>
+          <option *ngFor="let c of cuidadores" [ngValue]="c.cuidador_id">
+            {{ c.nombre }}
+          </option>
+        </select>
+
+        <small class="error" *ngIf="(cuidador_id.invalid || asignacion.cuidador_id==0) && cuidador_id.touched">
+          Selecciona un cuidador.
+        </small>
+      </div>
+
+      <div class="grupo">
+        <label>Fecha de Asignación <span class="req">*</span></label>
+
+        <input
+          type="date"
+          [(ngModel)]="asignacion.fecha_asignacion"
+          name="fecha_asignacion"
+          required
+          [max]="hoy"
+          #fecha="ngModel"
+        />
+
+        <small class="error" *ngIf="fecha.invalid && fecha.touched">
+          Selecciona una fecha válida (no futura).
+        </small>
+      </div>
+
+      <div class="grupo">
+        <label>Estado <span class="req">*</span></label>
+
+        <select [(ngModel)]="asignacion.estado" name="estado" required #estado="ngModel">
+          <option value="Activo">Activo</option>
+          <option value="Inactivo">Inactivo</option>
+        </select>
+
+        <small class="error" *ngIf="estado.invalid && estado.touched">
+          Selecciona un estado.
+        </small>
+      </div>
+
+      <div class="botones">
+        <button type="button" class="btn-cancelar" (click)="cancelar()">Cancelar</button>
+
+        <button type="submit" class="btn-guardar">
+          {{ esEdicion ? 'Actualizar' : 'Guardar' }}
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

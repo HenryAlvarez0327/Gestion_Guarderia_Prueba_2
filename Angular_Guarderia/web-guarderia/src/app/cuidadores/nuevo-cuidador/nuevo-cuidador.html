@@ -1,0 +1,88 @@
+<div class="edit-container">
+  <div class="edit-card">
+
+    <h2>{{ esEdicion ? 'Editar Cuidador' : 'Nuevo Cuidador' }}</h2>
+    <p class="sub">
+      {{ esEdicion ? 'Actualiza los datos del cuidador' : 'Registra un nuevo cuidador' }}
+    </p>
+
+    <form (ngSubmit)="guardar()" #form="ngForm">
+
+
+      <div class="grupo">
+        <label>Nombre <span class="req">*</span></label>
+
+        <input
+          type="text"
+          [(ngModel)]="cuidador.nombre"
+          name="nombre"
+          required
+          pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$"
+          (keypress)="soloLetras($event)"
+          #nombre="ngModel"
+        />
+
+        <small class="error" *ngIf="nombre.invalid && nombre.touched">
+          Solo letras permitidas.
+        </small>
+      </div>
+
+ 
+      <div class="grupo">
+        <label>Teléfono <span class="req">*</span></label>
+
+        <input
+          type="text"
+          [(ngModel)]="cuidador.telefono"
+          name="telefono"
+          required
+          maxlength="10"
+          inputmode="numeric"
+          (keypress)="soloNumeros($event)"
+          (paste)="bloquearPegadoNoNumerico($event)"
+          pattern="^[0-9]{10}$"
+          #telefono="ngModel"
+        />
+
+        <small class="error" *ngIf="telefono.invalid && telefono.touched">
+          Debe tener exactamente 10 números.
+        </small>
+      </div>
+
+ 
+      <div class="grupo">
+        <label>Email</label>
+
+        <input
+          type="email"
+          [(ngModel)]="cuidador.email"
+          name="email"
+          pattern="^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          #email="ngModel"
+        />
+
+        <small class="error" *ngIf="email.invalid && email.touched">
+          Email inválido.
+        </small>
+      </div>
+
+
+      <div class="grupo">
+        <label>Especialidad</label>
+        <input type="text" [(ngModel)]="cuidador.especialidad" name="especialidad">
+      </div>
+
+
+      <div class="botones">
+        <button type="button" class="btn-cancelar" (click)="cancelar()">
+          Cancelar
+        </button>
+
+        <button type="submit" class="btn-guardar">
+          {{ esEdicion ? 'Actualizar' : 'Guardar' }}
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="container-cuidadores">
+
+  <div class="header">
+    <div>
+      <h1>Lista de Cuidadores</h1>
+      <p>Gestión de registros de cuidadores (CRUD)</p>
+    </div>
+
+    <a routerLink="/cuidadores/nuevo" class="btn-nuevo">
+      + Nuevo Cuidador
+    </a>
+  </div>
+
+  <div class="buscador">
+    <input
+      type="text"
+      placeholder="Buscar por nombre, teléfono, email o especialidad..."
+      [(ngModel)]="termino"
+      (input)="filtrar()"
+    />
+
+    <button class="btn-recargar" (click)="limpiar()">Limpiar</button>
+  </div>
+
+  <div class="tabla-container">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Teléfono</th>
+          <th>Email</th>
+          <th>Especialidad</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let c of listaFiltrada; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ c.nombre }}</td>
+          <td>{{ c.telefono || '—' }}</td>
+          <td>{{ c.email || '—' }}</td>
+          <td><span class="badge">{{ c.especialidad || '—' }}</span></td>
+
+          <td class="acciones">
+            <button class="btn-editar" [routerLink]="['/cuidadores/editar', c.cuidador_id]">
+              Editar
+            </button>
+
+            <button class="btn-eliminar" (click)="eliminar(c.cuidador_id)">
+              Eliminar
+            </button>
+          </td>
+        </tr>
+
+        <tr *ngIf="listaFiltrada.length === 0">
+          <td colspan="6" class="sin-registros">No hay registros.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

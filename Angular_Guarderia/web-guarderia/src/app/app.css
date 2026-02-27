@@ -1,0 +1,47 @@
+.navbar{
+  height:70px;
+  background: linear-gradient(90deg,#1e3a8a,#2563eb);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 40px;
+  box-shadow:0 3px 12px rgba(0,0,0,0.15);
+}
+
+.logo{
+  font-size:22px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.nav-center a{
+  margin:0 15px;
+  text-decoration:none;
+  color:white;
+  font-weight:600;
+  padding:8px 16px;
+  border-radius:8px;
+  transition:.2s;
+}
+
+.nav-center a:hover{
+  background:rgba(255,255,255,0.2);
+}
+
+.activo{
+  background:white;
+  color:#2563eb !important;
+}
+
+.usuario{
+  background:rgba(255,255,255,0.2);
+  padding:8px 16px;
+  border-radius:10px;
+  font-weight:600;
+}
+
+
+.main-content{
+  padding: 20px;
+}

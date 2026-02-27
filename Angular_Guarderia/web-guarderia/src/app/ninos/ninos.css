@@ -1,0 +1,140 @@
+/* CONTENEDOR GENERAL */
+.container-ninos {
+  padding: 40px 20px;
+  background-color: #f4f6f9;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+  max-width: 1100px;
+  margin: 0 auto 25px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.header p {
+  margin: 5px 0 0;
+  color: #6c757d;
+}
+
+/* BOTÓN NUEVO */
+.btn-nuevo {
+  background: #2f5fd0;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn-nuevo:hover {
+  background: #244bb5;
+}
+
+/* BUSCADOR */
+.buscador {
+  max-width: 1100px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  gap: 10px;
+}
+
+.buscador input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.btn-recargar {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none;
+  background: #d9dee8;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* CENTRAR TABLA */
+.tabla-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* TABLA */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+thead {
+  background: #0d1b2a;
+  color: white;
+}
+
+th, td {
+  padding: 14px;
+  text-align: center;
+}
+
+tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover {
+  background: #f1f3f5;
+}
+
+/* BADGE ALERGIAS */
+.badge {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* BOTONES */
+.acciones {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-editar {
+  background: #f59e0b;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  opacity: 0.6;
+}
+
+.btn-eliminar {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn-eliminar:hover {
+  opacity: 0.9;
+}
